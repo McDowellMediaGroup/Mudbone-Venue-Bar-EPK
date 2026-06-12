@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>MUDBONE — Venue &amp; Bar EPK</title>
+<title>MUDBONE — Corporate &amp; Private Events EPK</title>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Lato:wght@300;400;700&family=Special+Elite&display=swap" rel="stylesheet">
 <style>
   :root {
@@ -14,7 +14,7 @@
     --amber-lt: #E8B040;
     --bone:     #F2EDE4;
     --muted:    #A89880;
-    --rust:     #6B2E0E;
+    --blood:    #8B1A1A;
     --white:    #FDFAF5;
   }
 
@@ -30,7 +30,7 @@
     overflow-x: hidden;
   }
 
-  /* ─── HERO ─────────────────────────────────────────── */
+  /* ─── HERO — ELEGANT SPLIT ──────────────────────────── */
   .hero {
     position: relative;
     min-height: 100vh;
@@ -41,10 +41,7 @@
   }
 
   @media (max-width: 780px) {
-    .hero {
-      grid-template-columns: 1fr;
-      min-height: auto;
-    }
+    .hero { grid-template-columns: 1fr; min-height: auto; }
   }
 
   .hero-photo-side {
@@ -59,15 +56,16 @@
     height: 100%;
     object-fit: cover;
     object-position: center top;
-    filter: brightness(0.7) saturate(0.85);
+    filter: brightness(0.65) saturate(0.75);
   }
 
   .hero-photo-side::after {
     content: '';
     position: absolute;
     inset: 0;
-    background: linear-gradient(to right, rgba(10,8,6,0) 50%, rgba(10,8,6,1) 100%),
-                linear-gradient(to bottom, rgba(10,8,6,0.3) 0%, rgba(10,8,6,0) 40%);
+    background:
+      linear-gradient(to right, rgba(10,8,6,0) 50%, rgba(10,8,6,1) 100%),
+      linear-gradient(to bottom, rgba(10,8,6,0.2) 0%, rgba(10,8,6,0) 50%);
   }
 
   @media (max-width: 780px) {
@@ -86,16 +84,14 @@
   }
 
   @media (max-width: 780px) {
-    .hero-text-side {
-      padding: 3rem 2rem;
-    }
+    .hero-text-side { padding: 3rem 2rem; }
   }
 
   .logo-wrap img {
     width: min(300px, 80%);
     height: auto;
     margin-bottom: 2rem;
-    filter: drop-shadow(0 0 24px rgba(200,144,26,0.4));
+    filter: drop-shadow(0 0 24px rgba(200,144,26,0.45));
   }
 
   .hero-name-fallback {
@@ -108,10 +104,20 @@
     margin-bottom: 1.5rem;
   }
 
+  .hero-eyebrow {
+    font-family: 'Special Elite', serif;
+    font-size: 0.72rem;
+    letter-spacing: 0.35em;
+    color: var(--blood);
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+    display: block;
+  }
+
   .hero-sub {
     font-family: 'Special Elite', serif;
-    font-size: 0.78rem;
-    letter-spacing: 0.32em;
+    font-size: 0.75rem;
+    letter-spacing: 0.28em;
     color: var(--amber);
     text-transform: uppercase;
     margin-bottom: 1.4rem;
@@ -120,26 +126,18 @@
   .hero-desc {
     font-size: clamp(0.9rem, 1.6vw, 1rem);
     color: var(--bone);
-    line-height: 1.75;
-    max-width: 480px;
+    line-height: 1.8;
+    max-width: 460px;
     margin-bottom: 2.5rem;
   }
 
-  .hero-desc em {
-    font-style: italic;
-    color: var(--amber-lt);
-  }
+  .hero-desc em { font-style: italic; color: var(--amber-lt); }
 
-  .cta-row {
-    display: flex;
-    gap: 1rem;
-    flex-wrap: wrap;
-    align-items: center;
-  }
+  .cta-row { display: flex; gap: 1rem; flex-wrap: wrap; align-items: center; }
 
   .cta-primary {
     display: inline-block;
-    padding: 0.8rem 2rem;
+    padding: 0.85rem 2rem;
     background: var(--amber);
     color: var(--black);
     font-family: 'Special Elite', serif;
@@ -152,14 +150,11 @@
     transition: background 0.2s, transform 0.2s;
   }
 
-  .cta-primary:hover {
-    background: var(--amber-lt);
-    transform: translateY(-2px);
-  }
+  .cta-primary:hover { background: var(--amber-lt); transform: translateY(-2px); }
 
   .cta-secondary {
     display: inline-block;
-    padding: 0.8rem 2rem;
+    padding: 0.85rem 2rem;
     border: 1px solid rgba(200,144,26,0.5);
     color: var(--amber);
     font-family: 'Special Elite', serif;
@@ -171,21 +166,12 @@
     transition: border-color 0.2s, color 0.2s;
   }
 
-  .cta-secondary:hover {
-    border-color: var(--amber-lt);
-    color: var(--amber-lt);
-  }
+  .cta-secondary:hover { border-color: var(--amber-lt); color: var(--amber-lt); }
 
-  /* ─── AMBER RULE ────────────────────────────────────── */
-  .rule { width: 48px; height: 2px; background: var(--amber); margin-bottom: 2rem; }
-  .rule-centered { margin: 0 auto 2rem; }
+  /* ─── RULES & SECTION ───────────────────────────────── */
+  .rule { width: 48px; height: 2px; background: linear-gradient(to right, var(--blood), var(--amber)); margin-bottom: 2rem; }
 
-  /* ─── SECTION ───────────────────────────────────────── */
-  .section {
-    padding: 5rem 2rem;
-    max-width: 1060px;
-    margin: 0 auto;
-  }
+  .section { padding: 5rem 2rem; max-width: 1060px; margin: 0 auto; }
 
   .section-eyebrow {
     font-family: 'Special Elite', serif;
@@ -205,24 +191,46 @@
     margin-bottom: 2rem;
   }
 
-  /* ─── SEP ───────────────────────────────────────────── */
-  .sep {
-    border: none;
-    border-top: 1px solid rgba(200,144,26,0.18);
-    margin: 0;
+  .sep { border: none; border-top: 1px solid rgba(200,144,26,0.18); margin: 0; }
+
+  /* ─── WHY MUDBONE GRID ──────────────────────────────── */
+  .why-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
   }
 
-  /* ─── STORY / BIO ───────────────────────────────────── */
+  .why-card {
+    background: var(--card);
+    border: 1px solid rgba(200,144,26,0.15);
+    border-top: 2px solid var(--blood);
+    border-radius: 4px;
+    padding: 1.8rem;
+    transition: border-color 0.25s, transform 0.25s;
+  }
+
+  .why-card:hover { border-color: rgba(200,144,26,0.5); transform: translateY(-3px); }
+
+  .why-card h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--amber);
+    margin-bottom: 0.7rem;
+  }
+
+  .why-card p { font-size: 0.88rem; color: var(--muted); line-height: 1.7; }
+
+  /* ─── BIO LAYOUT ────────────────────────────────────── */
   .bio-layout {
     display: grid;
-    grid-template-columns: 1fr 340px;
+    grid-template-columns: 1fr 320px;
     gap: 4rem;
     align-items: start;
   }
 
-  @media (max-width: 780px) {
-    .bio-layout { grid-template-columns: 1fr; gap: 2.5rem; }
-  }
+  @media (max-width: 780px) { .bio-layout { grid-template-columns: 1fr; gap: 2.5rem; } }
 
   .bio-text { font-size: 0.97rem; line-height: 1.85; }
   .bio-text p + p { margin-top: 1.1em; }
@@ -230,13 +238,14 @@
   .bio-aside {
     background: var(--card);
     border: 1px solid rgba(200,144,26,0.18);
-    border-radius: 4px;
+    border-left: 3px solid var(--blood);
+    border-radius: 0 4px 4px 0;
     padding: 1.8rem;
   }
 
   .bio-aside h3 {
     font-family: 'Special Elite', serif;
-    font-size: 0.7rem;
+    font-size: 0.68rem;
     letter-spacing: 0.28em;
     color: var(--amber);
     text-transform: uppercase;
@@ -267,9 +276,9 @@
 
   /* ─── PULL QUOTE ────────────────────────────────────── */
   .pull-quote {
-    border-left: 3px solid var(--amber);
+    border-left: 3px solid var(--blood);
     padding: 1.4rem 1.8rem;
-    margin: 3.5rem 0;
+    margin: 2.5rem 0;
     background: var(--card);
     border-radius: 0 4px 4px 0;
   }
@@ -277,7 +286,7 @@
   .pull-quote blockquote {
     font-family: 'Playfair Display', serif;
     font-style: italic;
-    font-size: clamp(1rem, 2vw, 1.3rem);
+    font-size: clamp(1rem, 2vw, 1.25rem);
     color: var(--white);
     line-height: 1.55;
     margin-bottom: 0.65rem;
@@ -309,88 +318,13 @@
     height: 100%;
     object-fit: cover;
     display: block;
-    filter: brightness(0.82) saturate(0.9);
+    filter: brightness(0.8) saturate(0.85);
     transition: filter 0.3s;
   }
 
   .mosaic img:hover { filter: brightness(1) saturate(1); }
   .mosaic-large { grid-row: 1 / 3; min-height: 400px; }
   .mosaic-sm { min-height: 195px; }
-
-  /* ─── ROOTS TIMELINE ────────────────────────────────── */
-  .roots-list {
-    margin-top: 2rem;
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-  }
-
-  .roots-item {
-    display: grid;
-    grid-template-columns: 80px 1fr;
-    gap: 1.5rem;
-    align-items: start;
-  }
-
-  @media (max-width: 480px) {
-    .roots-item { grid-template-columns: 1fr; gap: 0.4rem; }
-  }
-
-  .roots-year {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.3rem;
-    font-weight: 900;
-    color: var(--amber);
-    padding-top: 0.1rem;
-  }
-
-  .roots-text {
-    font-size: 0.92rem;
-    color: var(--bone);
-    line-height: 1.65;
-  }
-
-  .roots-text strong {
-    display: block;
-    font-weight: 700;
-    color: var(--white);
-    font-family: 'Lato', sans-serif;
-    margin-bottom: 0.25rem;
-  }
-
-  /* ─── SETLIST NOTE ──────────────────────────────────── */
-  .setlist-block {
-    background: var(--card);
-    border: 1px solid rgba(200,144,26,0.2);
-    border-radius: 4px;
-    padding: 2rem 2.5rem;
-    margin-top: 2rem;
-  }
-
-  .setlist-block h3 {
-    font-family: 'Special Elite', serif;
-    font-size: 0.7rem;
-    letter-spacing: 0.3em;
-    color: var(--amber);
-    text-transform: uppercase;
-    margin-bottom: 1.2rem;
-  }
-
-  .genre-grid {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.6rem;
-  }
-
-  .genre-tag {
-    border: 1px solid rgba(200,144,26,0.35);
-    border-radius: 2px;
-    padding: 0.3rem 0.9rem;
-    font-size: 0.82rem;
-    color: var(--amber-lt);
-    font-family: 'Special Elite', serif;
-    letter-spacing: 0.08em;
-  }
 
   /* ─── VIDEO ─────────────────────────────────────────── */
   .video-row {
@@ -410,10 +344,7 @@
     transition: border-color 0.25s, transform 0.25s;
   }
 
-  .video-card:hover {
-    border-color: var(--amber);
-    transform: translateY(-3px);
-  }
+  .video-card:hover { border-color: var(--amber); transform: translateY(-3px); }
 
   .video-thumb {
     position: relative;
@@ -439,15 +370,9 @@
     justify-content: center;
   }
 
-  .video-play svg {
-    width: 44px;
-    height: 44px;
-    filter: drop-shadow(0 2px 8px rgba(0,0,0,0.9));
-  }
+  .video-play svg { width: 44px; height: 44px; filter: drop-shadow(0 2px 8px rgba(0,0,0,0.9)); }
 
-  .video-label {
-    padding: 0.9rem 1.1rem;
-  }
+  .video-label { padding: 0.9rem 1.1rem; }
 
   .video-label strong {
     display: block;
@@ -464,7 +389,49 @@
     letter-spacing: 0.06em;
   }
 
-  /* ─── MUSIC LINKS ───────────────────────────────────── */
+  /* ─── RADIO CARD ────────────────────────────────────── */
+  .radio-card {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    background: var(--card);
+    border: 1px solid rgba(200,144,26,0.18);
+    border-left: 3px solid var(--blood);
+    border-radius: 0 4px 4px 0;
+    padding: 1.5rem 1.8rem;
+    text-decoration: none;
+    color: var(--bone);
+    margin-top: 2rem;
+    transition: border-color 0.25s, transform 0.25s;
+  }
+
+  .radio-card:hover { border-color: var(--amber); transform: translateY(-2px); }
+
+  .radio-icon {
+    width: 52px;
+    height: 52px;
+    background: rgba(139,26,26,0.3);
+    border: 1px solid rgba(139,26,26,0.5);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .radio-icon svg { width: 24px; height: 24px; }
+
+  .radio-info strong {
+    display: block;
+    font-family: 'Playfair Display', serif;
+    font-size: 1rem;
+    color: var(--white);
+    margin-bottom: 0.3rem;
+  }
+
+  .radio-info span { font-size: 0.8rem; color: var(--muted); font-family: 'Special Elite', serif; letter-spacing: 0.08em; }
+
+  /* ─── MUSIC ─────────────────────────────────────────── */
   .music-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
@@ -500,30 +467,14 @@
 
   .music-disc svg { width: 16px; height: 16px; fill: var(--black); }
 
-  .music-card strong {
-    display: block;
-    font-size: 0.86rem;
-    color: var(--white);
-    font-weight: 700;
-    margin-bottom: 0.2rem;
-  }
-
-  .music-card span {
-    font-size: 0.74rem;
-    color: var(--muted);
-    font-family: 'Special Elite', serif;
-  }
+  .music-card strong { display: block; font-size: 0.86rem; color: var(--white); font-weight: 700; margin-bottom: 0.2rem; }
+  .music-card span { font-size: 0.74rem; color: var(--muted); font-family: 'Special Elite', serif; }
 
   /* ─── TOURED WITH ───────────────────────────────────── */
-  .toured-chips {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.5rem;
-    margin-top: 1.8rem;
-  }
+  .toured-chips { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 1.8rem; }
 
   .chip {
-    background: rgba(200,144,26,0.08);
+    background: rgba(200,144,26,0.07);
     border: 1px solid rgba(200,144,26,0.2);
     border-radius: 2px;
     padding: 0.28rem 0.75rem;
@@ -555,12 +506,7 @@
     margin-bottom: 0.35rem;
   }
 
-  .contact-field a, .contact-field p {
-    font-size: 0.95rem;
-    color: var(--bone);
-    text-decoration: none;
-  }
-
+  .contact-field a, .contact-field p { font-size: 0.95rem; color: var(--bone); text-decoration: none; }
   .contact-field a:hover { color: var(--amber-lt); }
 
   /* ─── SOCIAL ────────────────────────────────────────── */
@@ -600,13 +546,7 @@
     border-top: 1px solid rgba(200,144,26,0.15);
   }
 
-  footer img {
-    height: 38px;
-    width: auto;
-    opacity: 0.7;
-    margin-bottom: 1rem;
-    filter: drop-shadow(0 0 5px rgba(200,144,26,0.25));
-  }
+  footer img { height: 38px; width: auto; opacity: 0.7; margin-bottom: 1rem; filter: drop-shadow(0 0 5px rgba(200,144,26,0.25)); }
 
   footer p {
     font-family: 'Special Elite', serif;
@@ -616,79 +556,93 @@
     text-transform: uppercase;
   }
 
-  .mmg-credit {
-    margin-top: 0.7rem;
-    font-size: 0.58rem;
-    color: rgba(168,152,128,0.4);
-    letter-spacing: 0.12em;
-  }
+  .mmg-credit { margin-top: 0.7rem; font-size: 0.58rem; color: rgba(168,152,128,0.4); letter-spacing: 0.12em; }
 </style>
 </head>
 <body>
 
-<!-- ═══ HERO — SPLIT LAYOUT ════════════════════════════════ -->
+<!-- ═══ HERO ══════════════════════════════════════════════ -->
 <section class="hero">
-
-  <!-- LEFT: Photo -->
   <div class="hero-photo-side">
-    <img
-      src="https://drive.google.com/thumbnail?id=1ZVCKrbmVjbNqm6tmz3Qjf-7VPxI_-_Jn&sz=w1200"
-      alt="Mudbone live"
-    >
+    <img src="https://lh3.googleusercontent.com/d/1fA4_5Y0zoQgk-ykbFFsocGin8pw-jxa0" alt="Mudbone live">
   </div>
 
-  <!-- RIGHT: Text -->
   <div class="hero-text-side">
     <div class="logo-wrap">
       <img
-        src="https://drive.google.com/thumbnail?id=1NhLKzIRg-hA8RJsEbqnOiS6Ip5We8zpV&sz=w600"
+        src="https://lh3.googleusercontent.com/d/1NhLKzIRg-hA8RJsEbqnOiS6Ip5We8zpV"
         alt="Mudbone"
         onerror="this.style.display='none'; document.querySelector('.hero-name-fallback').style.display='block'"
       >
       <h1 class="hero-name-fallback">MUDBONE</h1>
     </div>
 
+    <span class="hero-eyebrow">Corporate &amp; Private Events</span>
     <p class="hero-sub">Blues · Americana · Roots Rock · Soul</p>
 
     <p class="hero-desc">
-      A 25-year Nashville veteran who started playing Mississippi Delta juke joints at age twelve.
-      His blues name was given to him by a protégé of Son House himself.
-      Every night he plays is a history lesson you won't forget.
-      <em>200+ shows a year. Music is Medicine.</em>
+      A 25-year Nashville veteran with 250+ performances a year, Mudbone delivers world-class live entertainment that moves any room — from intimate private dinners to large-scale corporate galas. <em>Professional. Polished. Unforgettable.</em>
     </p>
 
     <div class="cta-row">
-      <a href="mailto:mudbonemusic@gmail.com" class="cta-primary">Book Mudbone</a>
+      <a href="mailto:mudbonemusic@gmail.com" class="cta-primary">Request a Quote</a>
       <a href="http://www.mudboneofficial.com" class="cta-secondary" target="_blank" rel="noopener">Website</a>
     </div>
   </div>
-
 </section>
 
-<!-- ═══ BIO + FACTS ════════════════════════════════════════ -->
+<!-- ═══ WHY MUDBONE FOR YOUR EVENT ═════════════════════════ -->
 <section class="section">
-  <span class="section-eyebrow">The Story</span>
+  <span class="section-eyebrow">Why Mudbone</span>
+  <div class="rule"></div>
+  <h2 class="section-title">The Right Artist for Any Event</h2>
+
+  <div class="why-grid">
+    <div class="why-card">
+      <h3>Flexible Configurations</h3>
+      <p>From a refined solo acoustic performance for an intimate dinner to a full 9-piece band production for a gala or outdoor event — Mudbone scales to fit your venue, budget, and audience perfectly.</p>
+    </div>
+    <div class="why-card">
+      <h3>Broad Audience Appeal</h3>
+      <p>His music crosses every demographic. Blues roots, country soul, classic rock energy — a sound that resonates with executives, employees, and guests alike without alienating anyone in the room.</p>
+    </div>
+    <div class="why-card">
+      <h3>Professional &amp; Reliable</h3>
+      <p>250+ performances annually, nationally and internationally. A 25-year Nashville career means your event runs smoothly, on time, and to a standard your guests will talk about long after.</p>
+    </div>
+    <div class="why-card">
+      <h3>A Story Worth Telling</h3>
+      <p>A blues name given by a protégé of Son House. A teenager who played his first paying gig on New Year's Eve in a Mississippi Delta honky-tonk. An artist whose story is as compelling as his music.</p>
+    </div>
+  </div>
+</section>
+
+<hr class="sep">
+
+<!-- ═══ BIO ════════════════════════════════════════════════ -->
+<section class="section">
+  <span class="section-eyebrow">The Artist</span>
   <div class="rule"></div>
 
   <div class="bio-layout">
     <div class="bio-text">
-      <p>Mudbone is a consummate musician, singer, songwriter, and producer whose debut double album <em>Rivers &amp; Roads</em> broke into the Top 100 on the Americana Charts independently — and did it twice, for both volumes. The work blends blues, soul, country, folk, and rock and roll into a sound that takes listeners on a journey from the roots of blues and bluegrass to the expansive highways of roots rock.</p>
+      <p>Mudbone is a Nashville-based singer, songwriter, guitarist, and producer whose debut double album <em>Rivers &amp; Roads</em> broke into the Top 100 on the Americana charts independently — twice. Gifted his blues name in a chance encounter with a protégé of blues pioneer Son House, he has spent 25 years building a reputation as one of the most compelling and versatile live performers in American roots music.</p>
 
-      <p>His time in honky tonks and juke joints honed his guitar skills and deepened his appreciation for the commonalities music creates across every kind of audience. The gospel and bluegrass harmonies of his childhood laid a foundation, while training in the vibrant blues scene of the Mississippi Delta made him not just an artist but a custodian of the Delta's legacy.</p>
+      <p>He grew up in Arkansas in a gospel and bluegrass family, began traveling to the Mississippi Delta at age 12, and was performing professionally by 13 — filling in on New Year's Eve for a departing guitarist in front of 300 people and earning his first two hundred-dollar bills that night. At 20 he took the Nashville exit off I-55 and never looked back.</p>
 
-      <p>He is passionately committed to a single message: Music is the commonality that bridges cultures and fosters understanding. Essentially, Music is Medicine. Whether performing for thousands at large festivals or in intimate bar and club settings, his powerful performances resonate deeply — and they pack a room.</p>
+      <p>Today he performs 250+ shows a year in configurations ranging from solo acoustic to full 9-piece band productions. His music blends blues, soul, country, folk, and rock and roll into what he calls "a musical gumbo of American roots music" — a sound broad enough to move any room and sophisticated enough for the most discerning audience.</p>
 
-      <div class="pull-quote" style="margin-top: 2.5rem; margin-bottom: 0;">
-        <blockquote>"Mudbone's music is flat out powerful. He will reach into your soul, conjure your demons and then release them for you."</blockquote>
-        <cite>— Outlaw Magazine</cite>
+      <div class="pull-quote" style="margin-top: 2rem; margin-bottom: 0;">
+        <blockquote>"He's performed over 250 national and international concerts this year alone... his first two albums debuted in the upper tier of the Americana album charts."</blockquote>
+        <cite>— Lee Zimmerman, The Daily Times (Maryville/Knoxville, TN)</cite>
       </div>
     </div>
 
     <div class="bio-aside">
       <h3>At A Glance</h3>
       <div class="fast-fact">
-        <span class="fast-fact-num">200+</span>
-        <span class="fast-fact-label">Shows per year, nationally &amp; internationally</span>
+        <span class="fast-fact-num">250+</span>
+        <span class="fast-fact-label">Performances per year, nationally &amp; internationally</span>
       </div>
       <div class="fast-fact">
         <span class="fast-fact-num">36</span>
@@ -699,12 +653,12 @@
         <span class="fast-fact-label">Years in the Nashville music scene</span>
       </div>
       <div class="fast-fact">
-        <span class="fast-fact-num">2×</span>
-        <span class="fast-fact-label">Top 100 Americana Charts (both albums)</span>
+        <span class="fast-fact-num">9-Pc</span>
+        <span class="fast-fact-label">Full band option available</span>
       </div>
-      <div class="fast-fact" style="margin-bottom: 0;">
-        <span class="fast-fact-num">12</span>
-        <span class="fast-fact-label">Age he started touring the Mississippi Delta</span>
+      <div class="fast-fact" style="margin-bottom:0;">
+        <span class="fast-fact-num">2×</span>
+        <span class="fast-fact-label">Top 100 Americana Charts, both albums</span>
       </div>
     </div>
   </div>
@@ -716,74 +670,39 @@
 <div style="padding: 0.5rem;">
   <div class="mosaic">
     <div class="mosaic-large">
-      <img src="https://drive.google.com/thumbnail?id=1fA4_5Y0zoQgk-ykbFFsocGin8pw-jxa0&sz=w800" alt="Mudbone promo" loading="lazy">
+      <img src="https://lh3.googleusercontent.com/d/1EmbruBQZzBzCY4n0coyX28lis1Rca8cV" alt="Mudbone promo" loading="lazy">
     </div>
     <div class="mosaic-sm">
-      <img src="https://drive.google.com/thumbnail?id=1E1RB8lyoeXaw_qHrBOvPUWendYpmStT_&sz=w600" alt="Mudbone promo" loading="lazy">
+      <img src="https://lh3.googleusercontent.com/d/1E1RB8lyoeXaw_qHrBOvPUWendYpmStT_" alt="Mudbone promo" loading="lazy">
     </div>
     <div class="mosaic-sm">
-      <img src="https://drive.google.com/thumbnail?id=1EmbruBQZzBzCY4n0coyX28lis1Rca8cV&sz=w600" alt="Mudbone promo" loading="lazy">
+      <img src="https://lh3.googleusercontent.com/d/1DUEJ9yechXfA8UfbQeTh1FB5qlgHxiOt" alt="Mudbone high res" loading="lazy">
     </div>
     <div class="mosaic-sm">
-      <img src="https://drive.google.com/thumbnail?id=1DUEJ9yechXfA8UfbQeTh1FB5qlgHxiOt&sz=w600" alt="Mudbone high res" loading="lazy">
+      <img src="https://lh3.googleusercontent.com/d/1RpG28ymoiRPJnHJE-m-iZb11_mWncaG4" alt="Mudbone stage" loading="lazy">
     </div>
     <div class="mosaic-sm">
-      <img src="https://drive.google.com/thumbnail?id=1RpG28ymoiRPJnHJE-m-iZb11_mWncaG4&sz=w600" alt="Mudbone stage" loading="lazy">
+      <img src="https://lh3.googleusercontent.com/d/1ZVCKrbmVjbNqm6tmz3Qjf-7VPxI_-_Jn" alt="Mudbone stage" loading="lazy">
     </div>
   </div>
 </div>
 
 <hr class="sep">
 
-<!-- ═══ ROOTS ══════════════════════════════════════════════ -->
+<!-- ═══ PRESS ══════════════════════════════════════════════ -->
 <section class="section">
-  <span class="section-eyebrow">The Roots</span>
+  <span class="section-eyebrow">Press</span>
   <div class="rule"></div>
-  <h2 class="section-title">Where He Comes From</h2>
+  <h2 class="section-title">What They're Saying</h2>
 
-  <div class="roots-list">
-    <div class="roots-item">
-      <span class="roots-year">Age 12</span>
-      <div class="roots-text">
-        <strong>Mississippi Delta Blues</strong>
-        Started touring honky tonks and juke joints across the Delta — the school you can't enroll in.
-      </div>
-    </div>
-    <div class="roots-item">
-      <span class="roots-year">Son House</span>
-      <div class="roots-text">
-        <strong>The Blues Name</strong>
-        Gifted the name "Mudbone" in a chance encounter with a protégé of blues pioneer Son House. That moment defines the lineage.
-      </div>
-    </div>
-    <div class="roots-item">
-      <span class="roots-year">Nashville</span>
-      <div class="roots-text">
-        <strong>25 Years in the Scene</strong>
-        Van Go Records recording artist. SESAC affiliated. Riverland Publishing. A career built the honest way.
-      </div>
-    </div>
-    <div class="roots-item">
-      <span class="roots-year">2026–27</span>
-      <div class="roots-text">
-        <strong>New Music Coming</strong>
-        Currently in the studio. Strong following across 36 states is hungry for new material.
-      </div>
-    </div>
+  <div class="pull-quote">
+    <blockquote>"Mudbone's music is flat out powerful. He will reach into your soul, conjure your demons and then release them for you."</blockquote>
+    <cite>— Outlaw Magazine</cite>
   </div>
 
-  <div class="setlist-block" style="margin-top: 3rem;">
-    <h3>What He Plays</h3>
-    <div class="genre-grid">
-      <span class="genre-tag">Delta Blues</span>
-      <span class="genre-tag">Roots Rock</span>
-      <span class="genre-tag">Americana</span>
-      <span class="genre-tag">Country Soul</span>
-      <span class="genre-tag">Gospel &amp; Bluegrass</span>
-      <span class="genre-tag">R&amp;B</span>
-      <span class="genre-tag">Classic Rock</span>
-      <span class="genre-tag">Folk</span>
-    </div>
+  <div class="pull-quote">
+    <blockquote>"Expect raw honest musical emotion. Hopefully it will serve as a pressure valve that allows you to regroup for the battles you may face ahead."</blockquote>
+    <cite>— Mudbone, as quoted in The Daily Times (Maryville/Knoxville, TN)</cite>
   </div>
 </section>
 
@@ -791,9 +710,9 @@
 
 <!-- ═══ VIDEO ══════════════════════════════════════════════ -->
 <section class="section">
-  <span class="section-eyebrow">Watch Him Work</span>
+  <span class="section-eyebrow">Watch &amp; Listen</span>
   <div class="rule"></div>
-  <h2 class="section-title">Video</h2>
+  <h2 class="section-title">Video &amp; Radio</h2>
 
   <div class="video-row">
     <a class="video-card" href="https://youtu.be/yZ6y0z39tDQ" target="_blank" rel="noopener">
@@ -805,19 +724,19 @@
       </div>
       <div class="video-label">
         <strong>Live in Birmingham</strong>
-        <span>Full Concert — See The Show</span>
+        <span>Full Concert</span>
       </div>
     </a>
     <a class="video-card" href="https://youtu.be/8anxlwafMwo" target="_blank" rel="noopener">
       <div class="video-thumb">
-        <img src="https://img.youtube.com/vi/8anxlwafMwo/hqdefault.jpg" alt="Whipping Post">
+        <img src="https://img.youtube.com/vi/8anxlwafMwo/hqdefault.jpg" alt="Whipping Post in a Cave">
         <div class="video-play">
           <svg viewBox="0 0 48 48"><circle cx="24" cy="24" r="23" stroke="var(--amber)" stroke-width="1.5" fill="rgba(0,0,0,0.55)"/><polygon points="19,14 38,24 19,34" fill="var(--amber)"/></svg>
         </div>
       </div>
       <div class="video-label">
-        <strong>Whipping Post in a Cave</strong>
-        <span>With An Orchestra</span>
+        <strong>Whipping Post — Cave &amp; Orchestra</strong>
+        <span>Live Performance</span>
       </div>
     </a>
     <a class="video-card" href="https://youtu.be/xScUGruXJ1s" target="_blank" rel="noopener">
@@ -833,6 +752,22 @@
       </div>
     </a>
   </div>
+
+  <!-- Radio Interview -->
+  <a class="radio-card" href="https://drive.google.com/file/d/1UfZaF-3mOPP3oxldsJHO_6ooqJwipCvC/view" target="_blank" rel="noopener">
+    <div class="radio-icon">
+      <svg viewBox="0 0 24 24" fill="none" stroke="var(--amber)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="12" cy="12" r="2"/>
+        <path d="M12 2a10 10 0 0 1 0 20"/>
+        <path d="M12 2a10 10 0 0 0 0 20"/>
+        <path d="M2 12h4M18 12h4"/>
+      </svg>
+    </div>
+    <div class="radio-info">
+      <strong>WUWF Public Radio — Acoustic Interlude</strong>
+      <span>Full Radio Interview &amp; Feature · Click to Listen</span>
+    </div>
+  </a>
 </section>
 
 <hr class="sep">
@@ -845,51 +780,31 @@
 
   <div class="music-grid">
     <a class="music-card" href="https://spotify.link/bYkPY3GTsJb" target="_blank" rel="noopener">
-      <div class="music-disc">
-        <svg viewBox="0 0 24 24"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/></svg>
-      </div>
-      <div>
-        <strong>Artist Page</strong>
-        <span>Full Discography</span>
-      </div>
+      <div class="music-disc"><svg viewBox="0 0 24 24"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/></svg></div>
+      <div><strong>Artist Page</strong><span>Full Discography</span></div>
     </a>
     <a class="music-card" href="https://spotify.link/64wX8zYhOJb" target="_blank" rel="noopener">
-      <div class="music-disc">
-        <svg viewBox="0 0 24 24"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/></svg>
-      </div>
-      <div>
-        <strong>Good Thing Bad</strong>
-        <span>Rivers &amp; Roads Pt. 2</span>
-      </div>
+      <div class="music-disc"><svg viewBox="0 0 24 24"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/></svg></div>
+      <div><strong>Good Thing Bad</strong><span>Rivers &amp; Roads Pt. 2</span></div>
     </a>
     <a class="music-card" href="https://spotify.link/ldJAqG8hOJb" target="_blank" rel="noopener">
-      <div class="music-disc">
-        <svg viewBox="0 0 24 24"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/></svg>
-      </div>
-      <div>
-        <strong>I've Been Workin'</strong>
-        <span>Rivers &amp; Roads Pt. 2</span>
-      </div>
+      <div class="music-disc"><svg viewBox="0 0 24 24"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/></svg></div>
+      <div><strong>I've Been Workin'</strong><span>Rivers &amp; Roads Pt. 2</span></div>
     </a>
     <a class="music-card" href="https://spotify.link/EmgMAGdiOJb" target="_blank" rel="noopener">
-      <div class="music-disc">
-        <svg viewBox="0 0 24 24"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/></svg>
-      </div>
-      <div>
-        <strong>Christmas Whiskey</strong>
-        <span>A Veterans Tribute</span>
-      </div>
+      <div class="music-disc"><svg viewBox="0 0 24 24"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/></svg></div>
+      <div><strong>Christmas Whiskey</strong><span>A Veterans Tribute</span></div>
     </a>
   </div>
 </section>
 
 <hr class="sep">
 
-<!-- ═══ TOURED WITH ════════════════════════════════════════ -->
+<!-- ═══ PEDIGREE ════════════════════════════════════════════ -->
 <section class="section" style="padding-bottom: 3.5rem;">
-  <span class="section-eyebrow">The Company He Keeps</span>
+  <span class="section-eyebrow">Pedigree</span>
   <div class="rule"></div>
-  <h2 class="section-title">Toured With &amp; Opened For</h2>
+  <h2 class="section-title">Performed Alongside</h2>
 
   <div class="toured-chips">
     <span class="chip">Charlie Daniels</span>
@@ -901,7 +816,7 @@
     <span class="chip">Buddy Guy</span>
     <span class="chip">Bobby Rush</span>
     <span class="chip">BB King</span>
-    <span class="chip">Rufus Thomas</span>
+    <span class="chip">Lisa Marie Presley</span>
     <span class="chip">Merle Haggard</span>
     <span class="chip">Blake Shelton</span>
     <span class="chip">Jamey Johnson</span>
@@ -914,7 +829,8 @@
     <span class="chip">The Bar-Kays</span>
     <span class="chip">Montgomery Gentry</span>
     <span class="chip">Joe Diffie</span>
-    <span class="chip">Aaron Tippin</span>
+    <span class="chip">Rufus Thomas</span>
+    <span class="chip">The Atlanta Rhythm Section</span>
   </div>
 </section>
 
@@ -922,13 +838,13 @@
 
 <!-- ═══ CONTACT ════════════════════════════════════════════ -->
 <section class="section">
-  <span class="section-eyebrow">Book The Room</span>
+  <span class="section-eyebrow">Book Your Event</span>
   <div class="rule"></div>
-  <h2 class="section-title">Booking Contact</h2>
+  <h2 class="section-title">Get In Touch</h2>
 
   <div class="contact-card">
     <div class="contact-field">
-      <label>Artist / Direct</label>
+      <label>Artist / Direct Booking</label>
       <p>Kris Caldwell (Mudbone)</p>
     </div>
     <div class="contact-field">
@@ -948,7 +864,7 @@
       <p>Kris Caldwell</p>
     </div>
     <div class="contact-field">
-      <label>Mailing</label>
+      <label>Mailing Address</label>
       <p>509 Ashlawn Cir, Nashville TN 37211</p>
     </div>
   </div>
@@ -971,7 +887,7 @@
 
 <!-- ═══ FOOTER ═════════════════════════════════════════════ -->
 <footer>
-  <img src="https://drive.google.com/thumbnail?id=1NhLKzIRg-hA8RJsEbqnOiS6Ip5We8zpV&sz=w300" alt="Mudbone">
+  <img src="https://lh3.googleusercontent.com/d/1NhLKzIRg-hA8RJsEbqnOiS6Ip5We8zpV" alt="Mudbone" onerror="this.style.display='none'">
   <p>© 2026 Mudbone Music &nbsp;·&nbsp; mudboneofficial.com</p>
   <p class="mmg-credit">EPK by McDowell Media Group · mcdowellmediagroup.com</p>
 </footer>
